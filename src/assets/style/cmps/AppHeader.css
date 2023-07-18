@@ -17,7 +17,7 @@
   margin-inline-end: 1.5em;
 }
 
-.app-header .router-link-active:not(:first-child) {
+.app-header .router-link-active:not(.logo) {
   color: var(--clr-Secondary1);
   border-bottom: 1px solid var(--clr-Secondary1);
 }

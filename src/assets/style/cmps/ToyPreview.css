@@ -37,6 +37,11 @@
     transform: scale(0.98);
 }
 
+.toy-preview:hover {
+    scale: 1.01;
+    opacity: 0.95;
+}
+
 .toy-preview .text {
     max-width: 55px;
 }
@@ -44,7 +49,6 @@
 .toy-preview img {
     background: rgb(241, 241, 241);
     width: 100%;
-    height: 100%;
     display: grid;
     place-items: center;
 }

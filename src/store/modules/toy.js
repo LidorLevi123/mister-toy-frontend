@@ -6,6 +6,7 @@ export const toyStore = {
     state() {
         return {
             toys: null,
+            filterBy: null
         }
     },
 
@@ -23,6 +24,10 @@ export const toyStore = {
         updateToy({ toys }, { toyToSave }) {
             const idx = toys.findIndex(toy => toy._id === toyToSave._id)
             toys.splice(idx, 1, toyToSave)
+        },
+        setFilterBy(state, { filterBy }) {
+            state.filterBy = filterBy
+            console.log(state.filterBy)
         }
     },
 
@@ -55,7 +60,15 @@ export const toyStore = {
     },
 
     getters: {
-        toys({ toys }) {
+        toys({ toys, filterBy }) {
+            if(!filterBy) return toys
+            
+            const regex = new RegExp(filterBy.name, 'i')
+            toys = toys.filter(toy => regex.test(toy.name))
+
+            if(filterBy.inStock !== null) {
+                toys = toys.filter(toy => toy.inStock === filterBy.inStock)
+            }
             return toys
         }
     },

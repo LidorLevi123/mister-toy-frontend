@@ -1,6 +1,9 @@
 <template>
     <section class="toy-index main-layout">
-        <button><RouterLink to="/toy/edit">Add Toy</RouterLink></button>
+        <div class="actions">
+            <button><RouterLink to="/toy/edit">Add Toy</RouterLink></button>
+            <ToyFilter @filter="setFilterBy"/>
+        </div>
         <ToyList @remove="removeToy" :toys="toys"/>
     </section>
 </template>
@@ -8,6 +11,7 @@
 <script>
 import { showSuccessMsg, showErrorMsg } from '@/services/event-bus.service'
 import ToyList from '@/cmps/ToyList.vue'
+import ToyFilter from '@/cmps/ToyFilter.vue'
 
 export default {
     methods: {
@@ -15,6 +19,9 @@ export default {
             this.$store.dispatch({ type: 'removeToy', toyId: toy._id })
                 .then(()=> showSuccessMsg(`'${toy.name}' removed`))
                 .catch(()=> showErrorMsg(`Could not remove '${toy.name}'`))
+        },
+        setFilterBy(filterBy) {
+            this.$store.commit({type: 'setFilterBy', filterBy: { ...filterBy }})
         }
     },
     computed: {
@@ -22,6 +29,7 @@ export default {
     },
     components: {
         ToyList,
+        ToyFilter
     }
 }
 </script>

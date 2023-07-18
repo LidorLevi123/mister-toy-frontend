@@ -1,3 +1,11 @@
 .toy-index {
+    display: grid;
+    gap: 1em;
     margin-block-start: 1em;
+}
+
+.toy-index > .actions {
+    display: flex;
+    align-items: center;
+    gap: 1em;
 }

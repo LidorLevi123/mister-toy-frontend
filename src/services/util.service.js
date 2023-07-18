@@ -7,7 +7,6 @@ export const utilService = {
     animateCSS,
     debounce,
     throttle
-
 }
 
 function makeId(length = 6) {
