@@ -9,14 +9,25 @@
                 <input type="radio" name="radio" @click="onSetFilterBy(true)">
                 <span class="name">In Stock</span>
             </label>
-            
+
             <label class="radio">
                 <input type="radio" name="radio" @click="onSetFilterBy(false)">
                 <span class="name">Out of stock</span>
             </label>
         </div>
 
-        <input placeholder="Search Toy" type="text" v-model="filterBy.name" >
+        <input placeholder="Search Toy" type="text" v-model="filterBy.name">
+
+        <div class="toy-sort">
+            <select v-model="filterBy.sortBy" id="sort-select">
+                <option value="">Sort by</option>
+                <option value="name">Name</option>
+                <option value="price">Price</option>
+                <option value="createdAt">Time Created</option>
+            </select>
+            <input v-model="filterBy.isDescending" type="checkbox" id="sort-descending" />
+            <label for="sort-descending">Descending</label>
+        </div>
     </section>
 </template>
 
@@ -28,7 +39,9 @@ export default {
         return {
             filterBy: {
                 name: '',
-                inStock: null
+                inStock: null,
+                sortBy: '',
+                isDescending: true
             },
         }
     },

@@ -33,6 +33,6 @@ function getEmptyToy() {
 		price: 0,
 		labels: [],
 		createdAt: Date.now(),
-		inStock: false,
+		inStock: true,
 	}
 }

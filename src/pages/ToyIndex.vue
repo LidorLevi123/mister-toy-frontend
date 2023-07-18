@@ -1,8 +1,8 @@
 <template>
     <section class="toy-index main-layout">
         <div class="actions">
-            <button><RouterLink to="/toy/edit">Add Toy</RouterLink></button>
             <ToyFilter @filter="setFilterBy"/>
+            <button><RouterLink to="/toy/edit">Add Toy</RouterLink></button>
         </div>
         <ToyList @remove="removeToy" :toys="toys"/>
     </section>

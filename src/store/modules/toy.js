@@ -27,7 +27,6 @@ export const toyStore = {
         },
         setFilterBy(state, { filterBy }) {
             state.filterBy = filterBy
-            console.log(state.filterBy)
         }
     },
 
@@ -51,7 +50,7 @@ export const toyStore = {
         saveToy({ commit }, { toyToSave }) {
             const type = toyToSave._id ? 'updateToy' : 'addToy'
             return toyService.save(toyToSave)
-                .then(toy => commit({ type, toyToSave: toy}))
+                .then(toy => commit({ type, toyToSave: toy }))
                 .catch(err => {
                     console.log(err)
                     return Promise.reject()
@@ -61,14 +60,24 @@ export const toyStore = {
 
     getters: {
         toys({ toys, filterBy }) {
-            if(!filterBy) return toys
-            
+            if (!filterBy) return toys
+
+            // Filter
             const regex = new RegExp(filterBy.name, 'i')
             toys = toys.filter(toy => regex.test(toy.name))
 
-            if(filterBy.inStock !== null) {
+            if (filterBy.inStock !== null) {
                 toys = toys.filter(toy => toy.inStock === filterBy.inStock)
             }
+
+            // Sort
+            const desc = filterBy.isDescending ? -1 : 1
+            const { sortBy } = filterBy
+
+            if (sortBy === 'name') toys.sort((t1, t2) => t1.name.localeCompare(t2.name) * desc)
+            else if (sortBy === 'price') toys.sort((t1, t2) => (t1.price - t2.price) * desc)
+            else if (sortBy === 'createdAt') toys.sort((t1, t2) => (t1.createdAt - t2.createdAt) * desc)
+
             return toys
         }
     },
