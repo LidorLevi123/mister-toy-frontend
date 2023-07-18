@@ -1,0 +1,23 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #0000007a;
+  background-color: lightgray;
+
+  font-size: 1.5rem;
+}
+
+.app-header h1 {
+  margin-block: 0.5em;
+}
+
+.app-header nav > *:not(:last-child) {
+  margin-inline-end: 1.5em;
+}
+
+.app-header .router-link-active {
+  color: var(--clr-Secondary1);
+  border-bottom: 1px solid var(--clr-Secondary1);
+}

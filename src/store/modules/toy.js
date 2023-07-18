@@ -12,7 +12,6 @@ export const toyStore = {
     mutations: {
         setToys(state, { toys }) {
             state.toys = toys
-            console.log(state.toys);
         },
         removeToy({ toys }, { toyId }) {
             const idx = toys.findIndex(toy => toy._id === toyId)
@@ -32,9 +31,19 @@ export const toyStore = {
                     return Promise.reject()
                 })
         },
+        removeToy({ commit }, payload) {
+            return toyService.remove(payload.toyId)
+                .then(() => commit(payload))
+                .catch(err => {
+                    console.log(err)
+                    return Promise.reject()
+                })
+        },
     },
 
     getters: {
-
+        toys({ toys }) {
+            return toys
+        }
     },
 }
