@@ -46,9 +46,16 @@
     max-width: 55px;
 }
 
-.toy-preview img {
+.toy-preview .toy-img {
     background: rgb(241, 241, 241);
     width: 100%;
     display: grid;
     place-items: center;
+}
+
+.toy-preview .sold-out-img {
+    position: absolute;
+    width: 45px;
+    right: 5px;
+    top: 5px;
 }
