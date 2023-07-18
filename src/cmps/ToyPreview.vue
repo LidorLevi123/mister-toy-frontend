@@ -1,5 +1,5 @@
 <template>
-    <article class="toy-preview">
+    <article @click="$router.push(`/toy/details/${toy._id}`)" class="toy-preview">
         <img :src="`https://robohash.org/ + ${ toy.name }`">
         <span class="title">{{ toy.name }}</span>
         <span class="price">${{ toy.price }}</span>

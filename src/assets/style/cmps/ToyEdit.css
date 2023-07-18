@@ -1,0 +1,20 @@
+.toy-edit {
+    display: grid;
+    place-items: center;
+    gap: 5px;
+    padding: 10px;
+    background-color: var(--clr3);
+    color: var(--clr1);
+}
+
+.toy-edit > *:first-child {
+    font-size: 2rem;
+}
+
+.toy-edit > input {
+    padding: 0.4em;
+}
+
+.toy-edit button {
+    justify-self: end;
+}

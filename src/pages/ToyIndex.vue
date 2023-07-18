@@ -1,5 +1,6 @@
 <template>
     <section class="toy-index main-layout">
+        <button><RouterLink to="/toy/edit">Add Toy</RouterLink></button>
         <ToyList @remove="removeToy" :toys="toys"/>
     </section>
 </template>

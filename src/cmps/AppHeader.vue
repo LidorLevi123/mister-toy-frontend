@@ -1,6 +1,6 @@
 <template>
     <header class="app-header main-layout">
-        <h1>misterToy</h1>
+        <h1><RouterLink to="/">misterToy</RouterLink></h1>
         <nav>
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/toy">Toys</RouterLink>

@@ -60,9 +60,12 @@ function _createToys() {
 
 function _createToy(name, price) {
 	const labels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll', 'Puzzle', 'Outdoor', 'Battery Powered']
-	const startIdx = utilService.getRandomIntInclusive(0, labels.length-3)
-	const endIdx = utilService.getRandomIntInclusive(startIdx, startIdx+3)
-	const randomLabels = labels.slice(startIdx, endIdx)
+
+	const randomLabels = []
+	for (let i = 0; i < 3; i++) {
+		const label = labels[utilService.getRandomIntInclusive(0, labels.length-3)]
+		randomLabels.includes(label) ? i-- : randomLabels.push(label)
+	}
 	
 	return {
 		_id: utilService.makeId(),

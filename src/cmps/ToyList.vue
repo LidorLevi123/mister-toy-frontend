@@ -1,9 +1,10 @@
 <template>
     <section class="toy-list">
         <ul class="clean-list">
-            <li @click="goTo(`/toy/details/${toy._id}`)" v-for="toy in toys" :key="toy._id">
+            <li v-for="toy in toys" :key="toy._id">
                 <section class="actions">
                     <button @click="removeToy(toy)">x</button>
+                    <button @click="goTo(`/toy/edit/${toy._id}`)">Edit</button>
                 </section>
                 <ToyPreview :toy="toy"/>
             </li>

@@ -17,8 +17,12 @@ export const toyStore = {
             const idx = toys.findIndex(toy => toy._id === toyId)
             toys.splice(idx, 1)
         },
-        addToy({ toys }, toy) {
-            toys.unshift(toy)
+        addToy({ toys }, { toyToSave }) {
+            toys.unshift(toyToSave)
+        },
+        updateToy({ toys }, { toyToSave }) {
+            const idx = toys.findIndex(toy => toy._id === toyToSave._id)
+            toys.splice(idx, 1, toyToSave)
         }
     },
 
@@ -39,6 +43,15 @@ export const toyStore = {
                     return Promise.reject()
                 })
         },
+        saveToy({ commit }, { toyToSave }) {
+            const type = toyToSave._id ? 'updateToy' : 'addToy'
+            return toyService.save(toyToSave)
+                .then(toy => commit({ type, toyToSave: toy}))
+                .catch(err => {
+                    console.log(err)
+                    return Promise.reject()
+                })
+        }
     },
 
     getters: {
