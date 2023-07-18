@@ -2,11 +2,15 @@
     <section class="toy-list">
         <ul class="clean-list">
             <li v-for="toy in toys" :key="toy._id">
-                <section class="actions">
-                    <button @click="removeToy(toy)">x</button>
-                    <button @click="goTo(`/toy/edit/${toy._id}`)">Edit</button>
-                </section>
                 <ToyPreview :toy="toy"/>
+                <section class="actions">
+                    <button class="btn-edit" @click="goTo(`/toy/edit/${toy._id}`)">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </button>
+                    <button class="btn-remove" @click="removeToy(toy)">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </section>
             </li>
         </ul>
     </section>
