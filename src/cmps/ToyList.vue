@@ -1,7 +1,7 @@
 <template>
     <section class="toy-list">
         <ul class="clean-list">
-            <li v-for="toy in toys" :key="toy._id">
+            <li @click="goTo(`/toy/details/${toy._id}`)" v-for="toy in toys" :key="toy._id">
                 <section class="actions">
                     <button @click="removeToy(toy)">x</button>
                 </section>
@@ -22,6 +22,9 @@ export default {
     methods: {
         removeToy(toy){
             this.$emit('remove', toy)
+        },
+        goTo(path) {
+            this.$router.push(path)
         }
     },
 
