@@ -1,6 +1,6 @@
 .toy-list ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
     gap:
      1em;
 }

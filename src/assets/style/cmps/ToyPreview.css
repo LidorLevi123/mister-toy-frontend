@@ -1,7 +1,5 @@
 .toy-preview {
     position: relative;
-    width: 12.875em;
-    height: 16.5em;
     box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 120ms;
@@ -12,6 +10,7 @@
     padding: 0.5em;
     padding-bottom: 3.4em;
     border-radius: 0.5em;
+    margin: 0;
 }
 
 .toy-preview .title {

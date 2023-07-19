@@ -12,7 +12,7 @@
 
             <label class="radio">
                 <input type="radio" name="radio" @click="onSetFilterBy(false)">
-                <span class="name">Out of stock</span>
+                <span class="name">Out of Stock</span>
             </label>
         </div>
 
