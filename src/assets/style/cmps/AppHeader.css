@@ -9,6 +9,18 @@
   font-size: 1.5rem;
 }
 
+.app-header .logo {
+  font-family: cursive;
+  font-weight: bold;
+  text-shadow: 0 0 3px white;
+  color: var(--clr-Secondary3);
+}
+
+.app-header h1 .logo span {
+  color: var(--clr-Primary2);
+  font-size: 50px;
+}
+
 .app-header h1 {
   margin-block: 0.5em;
 }

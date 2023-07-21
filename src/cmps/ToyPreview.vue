@@ -2,7 +2,7 @@
     <article @click="$router.push(`/toy/details/${toy._id}`)" class="toy-preview">
         <Spinner v-if="isImgLoading"/>
         <img class="toy-img" :src="imgUrl" @load="onImgLoad">
-        <img v-if="!toy.inStock" class="sold-out-img" src="src/assets/img/out-of-stock.png" alt="outofstock.png">
+        <img v-if="!toy.inStock" class="sold-out-img" src="/out-of-stock.png" alt="outofstock.png">
         <span class="title">{{ toy.name }}</span>
         <span class="price">${{ toy.price }}</span>
     </article>

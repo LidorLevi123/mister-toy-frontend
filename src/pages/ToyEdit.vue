@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-import { toyService } from '../services/toy.service.local'
+import { showErrorMsg, showSuccessMsg } from '@/services/event-bus.service'
+import { toyService } from '@/services/toy.service'
 
 export default {
     data() {

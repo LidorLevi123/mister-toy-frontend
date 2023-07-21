@@ -8,8 +8,8 @@ export const toyService = {
 	getEmptyToy,
 }
 
-function query() {
-	return httpService.get('toy')
+function query(filterBy) {
+	return httpService.get('toy', filterBy)
 }
 
 function getById(toyId) {
@@ -32,7 +32,7 @@ function getEmptyToy() {
 		name: '',
 		price: 0,
 		labels: [],
-		createdAt: Date.now(),
+		createdAt: 0,
 		inStock: true,
 	}
 }

@@ -12,7 +12,9 @@
 @import 'cmps/UserMsg.css';
 
 @import 'cmps/HomePage.css';
+@import 'cmps/AboutPage.css';
 @import 'cmps/AppHeader.css';
+@import 'cmps/Dashboard.css';
 
 @import 'cmps/ToyIndex.css';
 @import 'cmps/ToyList.css';

@@ -6,7 +6,7 @@
             </h4>
             <h1>{{ toy.name }}</h1> <span> {{ toyStock }}</span>
             <p>Time Created: {{ toy.createdAt }}</p>
-            <p>Labels: {{ toy.labels }}</p>
+            <p>Labels: {{ toyLabels }}</p>
             <hr>
             <p>{{ toy.description }}</p>
             <p>Price: ${{ toy.price }}</p>
@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import { toyService } from '../services/toy.service.local'
-import { showErrorMsg } from '../services/event-bus.service'
+import { toyService } from '@/services/toy.service'
+import { showErrorMsg } from '@/services/event-bus.service'
 
 export default {
     data() {
@@ -27,6 +27,9 @@ export default {
     computed: {
         toyStock() {
             return this.toy.inStock ? "In Stock" : "OUT OF STOCK"
+        },
+        toyLabels() {
+            return this.toy.labels.map(label => label.title).join(', ')
         }
     },
     created() {
