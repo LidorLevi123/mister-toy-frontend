@@ -1,7 +1,0 @@
-.dashboard {
-    text-align: center;
-}
-
-.dashboard h1:not(:first-child) {
-    margin-block-start: 3em;
-}

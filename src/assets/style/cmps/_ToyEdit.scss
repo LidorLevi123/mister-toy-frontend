@@ -5,16 +5,16 @@
     padding: 10px;
     background-color: var(--clr3);
     color: var(--clr1);
-}
 
-.toy-edit > *:first-child {
-    font-size: 2rem;
-}
+    > *:first-child {
+        font-size: 2rem;
+    }
 
-.toy-edit > input {
-    padding: 0.4em;
-}
+    > input {
+        padding: 0.4em;
+    }
 
-.toy-edit button {
-    justify-self: end;
+    button {
+        justify-self: end;
+    }
 }

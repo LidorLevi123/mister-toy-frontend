@@ -1,0 +1,60 @@
+.toy-preview {
+    position: relative;
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 120ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 0.5em;
+    padding-bottom: 3.4em;
+    border-radius: 0.5em;
+    margin: 0;
+
+    .title {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.9em;
+        position: absolute;
+        left: 0.625em;
+        bottom: 1.875em;
+        font-weight: 400;
+        color: #000;
+    }
+
+    .price {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 0.9em;
+        position: absolute;
+        left: 0.625em;
+        bottom: 0.625em;
+        color: #000;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &:hover {
+        scale: 1.01;
+        opacity: 0.95;
+    }
+
+    .text {
+        max-width: 55px;
+    }
+
+    .toy-img {
+        background: rgb(241, 241, 241);
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .sold-out-img {
+        position: absolute;
+        width: 45px;
+        right: 5px;
+        top: 5px;
+    }
+}
